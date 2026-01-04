@@ -4,16 +4,12 @@
   position: sticky;
   top: 0;
   z-index: 10;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   height: 64px;
   padding: 0 16px;
-
   background-color: $bg-header;
-
   border-bottom: 1px solid $border-subtle;
 
   .atlan-icon {
@@ -25,20 +21,14 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-
     padding: 6px 12px;
-
     font-size: 14px;
     font-weight: 500;
-
     color: $blue-primary;
     background-color: transparent;
-
     border: 1px solid $blue-primary;
     border-radius: 6px;
-
     cursor: pointer;
-
     transition:
       background-color 0.15s ease,
       color 0.15s ease,

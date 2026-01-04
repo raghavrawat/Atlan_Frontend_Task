@@ -4,10 +4,8 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-
   height: 100%;
   padding: 16px;
-
   background-color: $bg-page;
 
   .sql-editor-wrapper {
@@ -20,10 +18,8 @@
   .query-results {
     display: flex;
     flex-direction: column;
-
     flex: 1;
     min-height: 0;
-
     background-color: $bg-panel;
     border: 1px solid $border-subtle;
     border-radius: 8px;
@@ -58,7 +54,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
             border: 1px dashed #e5e7eb;
             border-radius: 6px;
             background-color: #ffffff;
@@ -74,7 +69,7 @@
                 color: #6b7280;
                 margin-top: 4px;
             }
-            }
+        }
     }
   }
 }

@@ -9,7 +9,7 @@ class Header extends Vue {
     render (): VNode {
         return (
              <div class="navigation-header">
-                <img class="atlan-icon" src="atlan.svg" />
+                <img class="atlan-icon" src="atlan.svg" alt="atlan-logo" />
                 <button class="new-query" onClick={() => this.$emit(this.EVENT_NEW_QUERY)}>+ New Query</button>
             </div>
         )
