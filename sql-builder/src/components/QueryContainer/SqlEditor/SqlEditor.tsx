@@ -13,6 +13,9 @@ class SqlEditor extends Vue {
     @Prop({ type: String, default: '' })
     readonly error: string
 
+    @Prop({ type: Boolean, default: false })
+    readonly loading: boolean
+
     private content = ''
 
     mounted (): void {
@@ -24,7 +27,7 @@ class SqlEditor extends Vue {
             <div class="sql-editor">
                 <div class="editor-toolbar">
                     <span class="editor-title">SQL</span>
-                    <button class="run-query" onClick={this.onClick}>
+                    <button disabled={this.loading} class="run-query" onClick={this.onClick}>
                         Run Query
                     </button>
                 </div>

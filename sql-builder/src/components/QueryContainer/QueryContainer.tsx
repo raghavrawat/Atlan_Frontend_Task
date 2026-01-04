@@ -6,6 +6,7 @@ import { Table } from './Table/Table'
 import { ITab, IQuery } from '@/interfaces'
 
 import { parseCsv, getTableNameFromQuery, applyQueryLogic } from '@/utils'
+import debounce from 'lodash/debounce'
 
 import './QueryContainer.scss'
 
@@ -37,6 +38,7 @@ class QueryContainer extends Vue {
             <div class="query-container">
                 <div class="sql-editor-wrapper">
                     <SqlEditor
+                        loading={this.loading}
                         value={this.activeQuery?.queryString || ''}
                         error={this.queryError}
                         onInput={this.handleInput}
@@ -88,7 +90,8 @@ class QueryContainer extends Vue {
                 baseTableData = parseCsv(atob(json.content))
                 this.$emit(this.EVENT_UPDATE_TAB, { baseTableData })
             } catch (e) {
-                alert(e)
+                // create a toast or show an error in the UI
+                console.log(e)
             } finally {
                 this.loading = false
             }
@@ -109,16 +112,24 @@ class QueryContainer extends Vue {
         })
     }
 
-    private handleInput (val: string): void {
-        if (!this.activeQuery) return
-
+    private emitInput = debounce((val: string, queryIndex: number, query: IQuery) => {
         this.$emit(this.EVENT_UPDATE_QUERY, {
-            queryIndex: 0,
+            queryIndex,
             query: {
-                ...this.activeQuery,
+                ...query,
                 queryString: val,
-            }
+            },
         })
+    },
+    200)
+
+    private handleInput (val: string): void {
+        const queryIndex = this.activeQueryIndex
+        const query = this.activeQuery
+
+        if (!query) return
+
+        this.emitInput(val, queryIndex, query)
     }
 
     private validateQuery(queryString: string): string | null {
