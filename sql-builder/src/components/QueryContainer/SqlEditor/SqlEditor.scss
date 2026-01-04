@@ -1,0 +1,99 @@
+@import '../../../styles/variables.scss';
+
+.sql-editor {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-height: 160px;
+
+  background-color: $bg-editor;
+  border: 1px solid $border-subtle;
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  .editor-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 8px 12px;
+    background-color: $bg-toolbar;
+    border-bottom: 1px solid $border-subtle;
+
+    .editor-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: $text-muted;
+    }
+
+    .run-query {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 500;
+
+      color: #ffffff;
+      background-color: $blue-primary;
+
+      border: none;
+      border-radius: 6px;
+
+      cursor: pointer;
+
+      transition: background-color 0.15s ease;
+
+      &:hover {
+        background-color: $blue-hover;
+      }
+
+      &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+      }
+    }
+  }
+
+  .input {
+    flex: 1;
+    min-height: 120px;
+
+    padding: 12px 14px;
+
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: $text-primary;
+    background-color: transparent;
+
+    border: none;
+    resize: vertical;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $text-muted;
+    }
+  }
+
+    .error-message {
+        padding: 8px 16px;
+        color: #f87171;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+  &:focus-within {
+    border-color: $blue-primary;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+}

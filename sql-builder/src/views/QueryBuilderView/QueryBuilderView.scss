@@ -1,0 +1,37 @@
+.query-builder-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    >.content {
+        height: 100%;
+
+        .query-builder-content {
+            padding: 0 0 0 240px;
+            flex: 1 1 auto;
+            height: 100%;
+
+            .empty-state {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border: 1px dashed #e5e7eb;
+                border-radius: 8px;
+
+                h2 {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: #111827;
+                    margin-bottom: 6px;
+                }
+
+                p {
+                    font-size: 14px;
+                    color: #6b7280;
+                }
+            }
+        }
+    }
+}
