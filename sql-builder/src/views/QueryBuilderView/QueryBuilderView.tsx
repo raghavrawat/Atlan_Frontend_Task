@@ -56,7 +56,7 @@ class QueryBuidlerView extends Vue {
                                                 tab={tab}
                                                 onInputChange={(val: string) => this.handleInputChange(val, index)} 
                                                 onUpdateQuery={(payload: { queryIndex: number, query: IQuery }) => this.updateQuery(index, payload)}
-                                                onUpdateTabBaseData={(payload: { baseTableData: Array<Record<string, string>> }) => this.updateTabBaseData(index, payload)}
+                                                onUpdateTab={(payload: { baseTableData: Array<Record<string, string>> }) => this.updateTabBaseData(index, payload)}
                                             />
                                         )
                                     })}
