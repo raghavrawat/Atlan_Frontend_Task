@@ -2,6 +2,8 @@
 
 Vercel Link: https://raghavrawat-taupe.vercel.app/
 
+Video walkthrough - https://drive.google.com/file/d/1E7g0GcKtd1b7HyvfjeYvfHLKwD1QIX4Y/view?usp=drive_link
+
 This project is an SQL Query Builder designed as part of the Atlan assignment, providing a tab-like interface for managing and executing database queries efficiently. It allows users to:
 
   - Create and manage multiple queries within a single tab.
