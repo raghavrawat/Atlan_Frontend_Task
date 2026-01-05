@@ -150,4 +150,4 @@ class QueryContainer extends Vue {
     }
 }
 
-export { QueryContainer }
+export default QueryContainer

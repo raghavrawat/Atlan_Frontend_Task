@@ -3,11 +3,19 @@ import { Component } from 'vue-property-decorator'
 
 import { LeftNavigation } from '@/components/LeftNavigation/LeftNavigation'
 import { TabStrip } from '@/components/TabStrip/TabStrip'
-import { QueryContainer } from '@/components/QueryContainer/QueryContainer'
 import { Header } from '@/components/Header/Header'
 
 import { NAV_ITEMS } from '@/constants'
 import { INavItem, ITab, IQuery } from '@/interfaces'
+
+const QueryContainer = Vue.component(
+  'QueryContainer',
+  () =>
+    import(
+      /* webpackChunkName: "query-container" */
+      '@/components/QueryContainer/QueryContainer'
+    )
+)
 
 import './QueryBuilderView.scss'
 
@@ -48,7 +56,7 @@ class QueryBuidlerView extends Vue {
                                                 tab={tab}
                                                 onInputChange={(val: string) => this.handleInputChange(val, index)} 
                                                 onUpdateQuery={(payload: { queryIndex: number, query: IQuery }) => this.updateQuery(index, payload)}
-                                                onUpdateTab={(payload: { baseTableData: Array<Record<string, string>> }) => this.updateTabBaseData(index, payload)}
+                                                onUpdateTabBaseData={(payload: { baseTableData: Array<Record<string, string>> }) => this.updateTabBaseData(index, payload)}
                                             />
                                         )
                                     })}
