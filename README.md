@@ -40,6 +40,7 @@ This project was built using Vue.js. Major plugins and packages used include:
     Best Practices - 100
 
  GT Metrix - 
+
     First Contentful Paint - 684ms
     Largest Contentful Paint - 684ms
     Time to Interactive - 684ms
@@ -55,6 +56,7 @@ This project was built using Vue.js. Major plugins and packages used include:
  Went to the incoginito tab and then Chrome devtools -> lighthouse
 
  Lighthouse - 
+ 
     First Contentful Paint - 0.2s
     Largest Contentful Paint - 0.3s
     Total Blocking Time - 0ms
